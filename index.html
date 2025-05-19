@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>خطة 25 يومًا للتميز</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --dark: #2D3748;
+            --light: #F7FAFC;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            perspective: 1000px;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        .card-container {
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+            position: relative;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateX(5deg) rotateY(-5deg); }
+            50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 40px;
+            width: 85%;
+            max-width: 500px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateZ(30px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateZ(40px);
+            box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        li {
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+            padding-right: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0.5em;
+            width: 8px;
+            height: 8px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+        }
+
+        .subject-title {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .question-count {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            height: 12px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 4%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            transition: width 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                            transparent, 
+                            rgba(255, 255, 255, 0.3), 
+                            transparent);
+            animation: shine 2s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .day-counter {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 30px 20px;
+                width: 90%;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="card-container">
+    <div class="card">
+        <div class="day-counter">اليوم <span id="currentDay">1</span> من 25</div>
+        <h1>الخطة الدراسية اليومية</h1>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <ul id="dailyPlan">
+            <!-- Day 1 content -->
+            <li>
+                <span class="subject-title">الجبر والهندسة:</span>
+                <span class="question-count">(34 سؤال)</span>
+                نظرية ذات الحدين + الأعداد المركبة
+            </li>
+            <li>
+                <span class="subject-title">التفاضل:</span>
+                <span class="question-count">(30 سؤال)</span>
+                الاشتقاق الضمني
+            </li>
+            <li>
+                <span class="subject-title">الاستاتيكا:</span>
+                <span class="question-count">(16 سؤال)</span>
+                العزوم
+            </li>
+            <li>
+                <span class="subject-title">الديناميكا:</span>
+                <span class="question-count">(25 سؤال)</span>
+                تفاضل الدوال المتجهة
+            </li>
+        </ul>
+        
+        <div class="footer">"النجاح رحلة يومية.. ابدأ خطوة، واستمر حتى القمة"</div>
+    </div>
+</div>
+
+<script>
+   // Study plan data for all 25 days
+const studyPlan = [
+    // اليوم 1
+    [
+        { subject: "الجبر والهندسة", topic: "نظرية ذات الحدين + الأعداد المركبة", questions: "34" },
+        { subject: "التفاضل", topic: "الاشتقاق الضمني", questions: "30" },
+        { subject: "الاستاتيكا", topic: "العزوم", questions: "16" },
+        { subject: "الديناميكا", topic: "تفاضل الدوال المتجهة", questions: "25" }
+    ],
+    // اليوم 2
+    [
+        { subject: "الجبر والهندسة", topic: "الأعداد المركبة", questions: "34" },
+        { subject: "التفاضل", topic: "المشتقات العليا", questions: "30" },
+        { subject: "الاستاتيكا", topic: "العزوم", questions: "16" },
+        { subject: "الديناميكا", topic: "تكامل الدوال المتجهة", questions: "25" }
+    ],
+    // اليوم 3
+    [
+        { subject: "الجبر والهندسة", topic: "المتجهات", questions: "34" },
+        { subject: "التفاضل", topic: "المعدلات الزمنية", questions: "30" },
+        { subject: "الاستاتيكا", topic: "محصلة القوى", questions: "16" },
+        { subject: "الديناميكا", topic: "حركة الأجسام", questions: "25" }
+    ],
+    // اليوم 4
+    [
+        { subject: "الجبر والهندسة", topic: "الضرب القياسي", questions: "34" },
+        { subject: "التفاضل", topic: "سلوك الدالة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "اتزان القوى", questions: "16" },
+        { subject: "الديناميكا", topic: "المصاعد", questions: "25" }
+    ],
+    // اليوم 5
+    [
+        { subject: "الجبر والهندسة", topic: "الخط المستقيم", questions: "34" },
+        { subject: "التفاضل", topic: "التكامل غير المحدود", questions: "30" },
+        { subject: "الاستاتيكا", topic: "الازدواج", questions: "16" },
+        { subject: "الديناميكا", topic: "الدفع", questions: "25" }
+    ],
+    // اليوم 6
+    [
+        { subject: "الجبر والهندسة", topic: "المستوي", questions: "34" },
+        { subject: "التفاضل", topic: "التكامل المحدد", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "الشغل", questions: "25" }
+    ],
+    // اليوم 7
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة شاملة", questions: "34" },
+        { subject: "التفاضل", topic: "تطبيقات التكامل", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "طاقة الحركة", questions: "25" }
+    ],
+    // اليوم 8
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة شاملة", questions: "34" },
+        { subject: "التفاضل", topic: "سلوك الدالة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مبدأ الشغل والطاقة", questions: "25" }
+    ],
+    // اليوم 9
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة شاملة", questions: "34" },
+        { subject: "التفاضل", topic: "تطبيقات القيم القصوى", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "طاقة الوضع", questions: "25" }
+    ],
+    // اليوم 10
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة شاملة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "القدرة", questions: "25" }
+    ],
+    // اليوم 11
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة شاملة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "البكرات", questions: "25" }
+    ],
+    // اليوم 12
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة شاملة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 13
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 14
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 15
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 16
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 17
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 18
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 19
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 20
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 21
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 22
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 23
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 24
+    [
+        { subject: "الجبر والهندسة", topic: "مراجعة", questions: "34" },
+        { subject: "التفاضل", topic: "مراجعة", questions: "30" },
+        { subject: "الاستاتيكا", topic: "مراجعة", questions: "16" },
+        { subject: "الديناميكا", topic: "مراجعة", questions: "25" }
+    ],
+    // اليوم 25
+    [
+        { subject: "مراجعة عامة", topic: "جميع المواد", questions: "مراجعة" },
+        { subject: "مراجعة عامة", topic: "جميع المواد", questions: "مراجعة" },
+        { subject: "مراجعة عامة", topic: "جميع المواد", questions: "مراجعة" },
+        { subject: "مراجعة عامة", topic: "جميع المواد", questions: "مراجعة" }
+    ]
+];
+
+// Set your start date (year, month-1, day)
+const startDate = new Date(2025, 4, 20); // November 15, 2023 (month is 0-indexed)
+
+// Calculate current day of study
+function getCurrentDay() {
+    const today = new Date();
+    const diffTime = today - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1; // +1 because Day 1 is start date
+    
+    // Ensure day is within 1-25 range
+    if (diffDays < 1) return 1;
+    if (diffDays > 25) return 25;
+    return diffDays;
+}
+
+// Display daily plan
+function displayDailyPlan(day) {
+    const dayIndex = day - 1;
+    const planContainer = document.getElementById('dailyPlan');
+    planContainer.innerHTML = '';
+    
+    studyPlan[dayIndex].forEach(item => {
+        planContainer.innerHTML += `
+            <li>
+                <span class="subject-title">${item.subject}:</span>
+                ${item.questions !== "مراجعة" ? `<span class="question-count">(${item.questions} سؤال)</span>` : ''}
+                ${item.topic}
+            </li>
+        `;
+    });
+    
+    // Update progress and day counter
+    const progress = (day / 25) * 100;
+    document.getElementById('progressBar').style.width = `${progress}%`;
+    document.getElementById('currentDay').textContent = day;
+    
+    // Change progress bar color based on progress
+    if (progress < 30) {
+        document.getElementById('progressBar').style.background = 'linear-gradient(90deg, #6C63FF, #FF6584)';
+    } else if (progress < 70) {
+        document.getElementById('progressBar').style.background = 'linear-gradient(90deg, #FF6584, #FFC107)';
+    } else {
+        document.getElementById('progressBar').style.background = 'linear-gradient(90deg, #FFC107, #4CAF50)';
+    }
+}
+
+// Initialize with current day
+document.addEventListener('DOMContentLoaded', function() {
+    const currentDay = getCurrentDay();
+    displayDailyPlan(currentDay);
+    
+    // Optional: Add navigation buttons
+    /*
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        const nextDay = Math.min(currentDay + 1, 25);
+        displayDailyPlan(nextDay);
+    });
+    
+    document.getElementById('prevBtn').addEventListener('click', function() {
+        const prevDay = Math.max(currentDay - 1, 1);
+        displayDailyPlan(prevDay);
+    });
+    */
+});
+</script>
+
+</body>
+</html>
