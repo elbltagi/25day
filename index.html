@@ -189,6 +189,70 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
+        /* NEW BUTTON STYLES (contrasting design) */
+        /* Navigation Buttons - Card Style */
+/* Update button styles */
+/* Navigation Buttons - Updated Styles */
+.navigation-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0 0;
+    margin-top: 0.5rem;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.navigation-buttons button {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+.navigation-buttons button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.navigation-buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.05);
+    transform: none !important;
+}
+
+.navigation-buttons button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .navigation-buttons {
+        gap: 1rem;
+        flex-direction: column;
+    }
+    
+    .navigation-buttons button {
+        padding: 0.7rem;
+        width: 100%;
+    }
+}
+
         @media (max-width: 600px) {
             .card {
                 padding: 30px 20px;
@@ -201,6 +265,16 @@
             
             li {
                 font-size: 1rem;
+            }
+            
+            .navigation-buttons {
+                gap: 1rem;
+                flex-direction: column;
+            }
+            
+            .navigation-buttons button {
+                padding: 0.7rem;
+                width: 100%;
             }
         }
     </style>
@@ -216,6 +290,14 @@
         <ul id="dailyPlan">
             <!-- سيتم تعبئتها ديناميكيًا -->
         </ul>
+        
+        <div class="navigation-card">
+            <div class="navigation-buttons">
+    <button onclick="nextDay()">اليوم التالي</button>
+    <button onclick="prevDay()">اليوم السابق</button>
+</div>
+        </div>
+        
         <div class="footer">"النجاح رحلة يومية.. ابدأ خطوة، واستمر حتى القمة"</div>
     </div>
 </div>
@@ -527,20 +609,12 @@ const studyData = {
   ]
 };
 
-
-
 function getStudyDay() {
-  const startDate = new Date(2025, 4, 20); // مثلاً تاريخ بداية الخطة: 21 مايو 2025
+  const startDate = new Date(2025, 4, 20); // May 21, 2025
   const today = new Date();
-  
-  // حساب الفرق بالأيام
   const diffTime = today - startDate;
-  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1; // +1 لأن اليوم الأول هو 1
-  
-  // إعادة رقم اليوم ضمن المدى 1-25
-  if(diffDays < 1) return 1;
-  if(diffDays > 25) return 25;
-  return diffDays;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+  return Math.min(Math.max(diffDays, 1), 25); // Clamp between 1 and 25
 }
 
 function renderPlan(day) {
@@ -572,9 +646,28 @@ function renderPlan(day) {
       ${plan.dynamics}
     </li>
   `;
+
+  // Update button states
+  const maxDay = getStudyDay();
+  document.querySelector('.navigation-buttons button:nth-child(1)').disabled = (day >= maxDay);
+  document.querySelector('.navigation-buttons button:nth-child(2)').disabled = (day <= 1);
 }
 
-// عند تحميل الصفحة
+function nextDay() {
+  const currentDay = parseInt(document.getElementById('currentDay').textContent);
+  const maxDay = getStudyDay();
+  if(currentDay < maxDay) {
+    renderPlan(currentDay + 1);
+  }
+}
+
+function prevDay() {
+  const currentDay = parseInt(document.getElementById('currentDay').textContent);
+  if(currentDay > 1) {
+    renderPlan(currentDay - 1);
+  }
+}
+
 window.onload = () => {
   const todayDay = getStudyDay();
   renderPlan(todayDay);
