@@ -1,0 +1,429 @@
+{
+  "plan": [
+    {
+      "day": 1,
+      "math": {
+        "topic": "الأعداد المركبة",
+        "section": "الجزء 1",
+        "range": "1-34",
+        "total_in_section": 133
+      },
+      "calculus": {
+        "topic": "المشتقات العليا",
+        "section": "الجزء 2",
+        "range": "1-30",
+        "total_in_section": 46
+      },
+      "statics": {
+        "topic": "العزوم",
+        "section": "الجزء 1",
+        "range": "1-16",
+        "total_in_section": 58
+      },
+      "dynamics": {
+        "topic": "تكامل الدوال المتجهة",
+        "section": "",
+        "range": "1-25",
+        "total_in_section": 50
+      }
+    },
+    {
+      "day": 2,
+      "math": {
+        "topic": "الأعداد المركبة",
+        "section": "الجزء 1",
+        "range": "35-69",
+        "total_in_section": 133
+      },
+      "calculus": {
+        "topic": "المشتقات العليا",
+        "section": "الجزء 2",
+        "range": "31-62",
+        "total_in_section": 46
+      },
+      "statics": {
+        "topic": "العزوم",
+        "section": "الجزء 1",
+        "range": "17-51",
+        "total_in_section": 58
+      },
+      "dynamics": {
+        "topic": "تكامل الدوال المتجهة",
+        "section": "",
+        "range": "26-50",
+        "total_in_section": 50
+      },
+      "notes": "بداية الدراسة"
+    },
+    {
+      "day": 3,
+      "math": {
+        "topic": "الأعداد المركبة",
+        "section": "الجزء 1",
+        "range": "70-104",
+        "total_in_section": 133
+      },
+      "calculus": {
+        "topic": "المشتقات العليا",
+        "section": "الجزء 2",
+        "range": "63-94",
+        "total_in_section": 46
+      },
+      "statics": {
+        "topic": "العزوم",
+        "section": "الجزء 1",
+        "range": "52-85",
+        "total_in_section": 58
+      },
+      "dynamics": {
+        "topic": "تفاضل الدوال المتجهة",
+        "section": "",
+        "range": "1-32",
+        "total_in_section": 96
+      },
+      "notes": "متابعة الدراسة"
+    },
+    {
+      "day": 4,
+      "math": {
+        "topic": "الأعداد المركبة",
+        "section": "الجزء 1",
+        "range": "105-133",
+        "total_in_section": 133
+      },
+      "calculus": {
+        "topic": "المشتقات العليا",
+        "section": "الجزء 2",
+        "range": "31-46",
+        "total_in_section": 46
+      },
+      "statics": {
+        "topic": "العزوم",
+        "section": "الجزء 2",
+        "range": "1-35",
+        "total_in_section": 44
+      },
+      "dynamics": {
+        "topic": "تفاضل الدوال المتجهة",
+        "section": "",
+        "range": "33-64",
+        "total_in_section": 96
+      },
+      "notes": "نهاية دراسة المشتقات العليا"
+    },
+    {
+      "day": 5,
+      "math": {
+        "topic": "نظرية ذات الحدين",
+        "section": "الجزء 1",
+        "range": "1-35",
+        "total_in_section": 106
+      },
+      "calculus": {
+        "topic": "الاشتقاق الضمني والبارامتري",
+        "section": "الجزء 1",
+        "range": "1-23",
+        "total_in_section": 188
+      },
+      "statics": {
+        "topic": "محصلة القوى المتوازية",
+        "section": "",
+        "range": "1-27",
+        "total_in_section": 81
+      },
+      "dynamics": {
+        "topic": "حركة الأجسام ذات الكتلة والعجلة",
+        "section": "",
+        "range": "1-25",
+        "total_in_section": 50
+      },
+      "notes": "بداية نظرية ذات الحدين"
+    },
+    {
+      "day": 6,
+      "math": {
+        "topic": "نظرية ذات الحدين",
+        "section": "الجزء 1",
+        "range": "36-70",
+        "total_in_section": 106
+      },
+      "calculus": {
+        "topic": "الاشتقاق الضمني والبارامتري",
+        "section": "الجزء 1",
+        "range": "24-46",
+        "total_in_section": 188
+      },
+      "statics": {
+        "topic": "محصلة القوى المتوازية",
+        "section": "",
+        "range": "28-54",
+        "total_in_section": 81
+      },
+      "dynamics": {
+        "topic": "حركة الأجسام ذات الكتلة والعجلة",
+        "section": "",
+        "range": "26-50",
+        "total_in_section": 50
+      },
+      "notes": "متابعة نظرية ذات الحدين"
+    },
+    {
+      "day": 7,
+      "math": {
+        "topic": "نظرية ذات الحدين",
+        "section": "الجزء 1",
+        "range": "71-106",
+        "total_in_section": 106
+      },
+      "calculus": {
+        "topic": "المعدلات الزمنية",
+        "section": "",
+        "range": "1-27",
+        "total_in_section": 81
+      },
+      "statics": {
+        "topic": "اتزان مجموعة القوى المستوية",
+        "section": "",
+        "range": "1-27",
+        "total_in_section": 82
+      },
+      "dynamics": {
+        "topic": "المصاعد",
+        "section": "",
+        "range": "1-23",
+        "total_in_section": 46
+      },
+      "notes": "نهاية نظرية ذات الحدين"
+    },
+    {
+      "day": 8,
+      "math": {
+        "topic": "النظام الإحداثي ثلاثي الأبعاد",
+        "section": "",
+        "range": "1-22",
+        "total_in_section": 43
+      },
+      "calculus": {
+        "topic": "المعدلات الزمنية",
+        "section": "",
+        "range": "28-54",
+        "total_in_section": 81
+      },
+      "statics": {
+        "topic": "اتزان مجموعة القوى المستوية",
+        "section": "",
+        "range": "28-54",
+        "total_in_section": 82
+      },
+      "dynamics": {
+        "topic": "المصاعد",
+        "section": "",
+        "range": "24-46",
+        "total_in_section": 46
+      },
+      "notes": "بدء النظام الإحداثي"
+    },
+    {
+      "day": 9,
+      "math": {
+        "topic": "النظام الإحداثي ثلاثي الأبعاد",
+        "section": "",
+        "range": "23-43",
+        "total_in_section": 43,
+        "notes": "إكمال النظام الإحداثي"
+      },
+      "calculus": {
+        "topic": "سلوك الدالة",
+        "section": "الجزء 1",
+        "range": "1-26",
+        "total_in_section": 98
+      },
+      "statics": {
+        "topic": "الازدواج",
+        "section": "",
+        "range": "1-30",
+        "total_in_section": 121
+      },
+      "dynamics": {
+        "topic": "البكرات",
+        "section": "",
+        "range": "1-21",
+        "total_in_section": 42
+      }
+    },
+    {
+      "day": 10,
+      "math": {
+        "topic": "المتجهات في الفراغ",
+        "section": "",
+        "range": "1-26",
+        "total_in_section": 76
+      },
+      "calculus": {
+        "topic": "سلوك الدالة",
+        "section": "الجزء 1",
+        "range": "27-52",
+        "total_in_section": 98
+      },
+      "statics": {
+        "topic": "الازدواج",
+        "section": "",
+        "range": "31-60",
+        "total_in_section": 121
+      },
+      "dynamics": {
+        "topic": "البكرات",
+        "section": "",
+        "range": "22-42",
+        "total_in_section": 42,
+        "notes": "إكمال البكرات"
+      },
+      "notes": "بداية المتجهات"
+    },
+
+    {
+      "day": 11,
+      "math": {
+        "topic": "المتجهات في الفراغ",
+        "section": "",
+        "range": "27-51",
+        "total_in_section": 76
+      },
+      "calculus": {
+        "topic": "تطبيقات القيم العظمى والصغرى",
+        "section": "",
+        "range": "1-24",
+        "total_in_section": 72
+      },
+      "statics": {
+        "topic": "محصلة القوى المتوازية",
+        "section": "مراجعة",
+        "range": "1-27",
+        "total_in_section": 81
+      },
+      "dynamics": {
+        "topic": "الدفع",
+        "section": "",
+        "range": "1-22",
+        "total_in_section": 65
+      },
+      "notes": "مراجعة أو تعويض"
+    },
+
+    {
+      "day": 12,
+      "math": {
+        "topic": "الضرب القياسي",
+        "section": "",
+        "range": "1-33",
+        "total_in_section": 98
+      },
+      "calculus": {
+        "topic": "تطبيقات القيم العظمى والصغرى",
+        "section": "",
+        "range": "25-48",
+        "total_in_section": 72
+      },
+      "statics": {
+        "topic": "اتزان القوى المستوية",
+        "section": "مراجعة",
+        "range": "1-27",
+        "total_in_section": 82
+      },
+      "dynamics": {
+        "topic": "الدفع",
+        "section": "",
+        "range": "23-44",
+        "total_in_section": 65
+      },
+      "notes": "بداية الضرب القياسي"
+    },
+
+    {
+      "day": 13,
+      "math": {
+        "topic": "الضرب القياسي",
+        "section": "",
+        "range": "34-66",
+        "total_in_section": 98
+      },
+      "calculus": {
+        "topic": "التكامل",
+        "section": "",
+        "range": "1-30",
+        "total_in_section": 90
+      },
+      "statics": {
+        "topic": "الازدواج",
+        "section": "مراجعة",
+        "range": "1-31",
+        "total_in_section": 121
+      },
+      "dynamics": {
+        "topic": "الشغل",
+        "section": "",
+        "range": "1-24",
+        "total_in_section": 73
+      },
+      "notes": "إكمال الضرب القياسي"
+    },
+
+    {
+      "day": 14,
+      "math": {
+        "topic": "الضرب الاتجاهي",
+        "section": "",
+        "range": "1-37",
+        "total_in_section": 73
+      },
+      "calculus": {
+        "topic": "التكامل",
+        "section": "",
+        "range": "31-60",
+        "total_in_section": 90
+      },
+      "statics": {
+        "topic": "محصلة القوى المتوازية",
+        "section": "مراجعة",
+        "range": "28-54",
+        "total_in_section": 81
+      },
+      "dynamics": {
+        "topic": "الشغل",
+        "section": "",
+        "range": "25-48",
+        "total_in_section": 73
+      },
+      "notes": "بداية الضرب الاتجاهي"
+    },
+
+    {
+      "day": 15,
+      "math": {
+        "topic": "الضرب الاتجاهي",
+        "section": "",
+        "range": "38-73",
+        "total_in_section": 73,
+        "notes": "إكمال الضرب الاتجاهي"
+      },
+      "calculus": {
+        "topic": "التكامل المحدد",
+        "section": "",
+        "range": "1-29",
+        "total_in_section": 88
+      },
+      "statics": {
+        "topic": "اتزان القوى المستوية",
+        "section": "مراجعة",
+        "range": "28-54",
+        "total_in_section": 82
+      },
+      "dynamics": {
+        "topic": "طاقة الحركة",
+        "section": "",
+        "range": "1-23",
+        "total_in_section": 47
+      }
+    }
+  ]
+}
